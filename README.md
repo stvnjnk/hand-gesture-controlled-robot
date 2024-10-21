@@ -1,57 +1,124 @@
+
 # Hand Gesture Controlled Robot using RF Modules
 
-## Project Description
+> A project to create a wireless hand gesture-controlled robot using RF modules and an MPU6050 sensor for gesture-based motion control.
 
-This project involves the design and implementation of a hand gesture-controlled robot car using RF (Radio Frequency) communication technology. Utilizing 433MHz RF transmitter/receiver modules and the MPU6050 sensor, motion data from hand gestures is captured and transmitted to control the movement of a robot car. The system responds to various gestures to command the car to move forward, backward, turn, or stop.
+---
 
-## Components Used
-- **Arduino UNO & Arduino Nano**: Microcontroller boards for transmitter and receiver.
-- **RF 433MHz Transmitter Module**: Sends commands from hand gestures to the robot.
-- **RF 433MHz Receiver Module**: Receives commands and controls the robot’s movements.
-- **MPU6050 Accelerometer and Gyroscope**: Tracks hand gestures and relays data to the Arduino.
-- **L298N Motor Driver**: Controls the speed and direction of the robot’s motors.
-- **DC Motors**: Drives the robot's wheels.
+## Table of Contents
 
-## Setup Instructions
+- [Overview](#overview)
+- [Built With](#built-with)
+  - [Libraries Used](#libraries-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Contributing](#contributing)
+- [License](#license)
 
-1. **Clone the Repository**:
-   ```bash
+---
+
+## Overview
+
+This project showcases a hand gesture-controlled robot that utilizes **RF communication** and an **MPU6050 accelerometer and gyroscope** sensor. By tilting your hand in different directions, the robot can move forward, backward, left, or right. The core aim of the project is to explore wireless, intuitive robot control using simple hardware components, creating an interactive and innovative control mechanism for robotics.
+
+### Goal: 
+To build a gesture-controlled robot with simple, reliable wireless communication using low-cost components.
+
+---
+
+![Transmitter Demo 1](docs/IMG_6290.png)
+*Caption: Front view of the transmitter.*
+
+---
+
+## Features
+
+- **Wireless Control**: Control the robot car wirelessly using RF communication.
+- **Gesture-Based Commands**: Move the car forward, backward, and turn left or right using hand gestures.
+- **Simple Setup**: Built with Arduino, MPU6050, and RF 433MHz modules for an easy-to-follow project.
+- **Flexible Design**: Works with standard components and minimal hardware requirements.
+
+---
+
+### Built With
+This project was built using:
+- **Arduino UNO & NANO**
+- **MPU6050 Accelerometer and Gyroscope**
+- **RF 433MHz Transmitter/Receiver Modules**
+- **L298N Motor Driver**
+- **DC Motors**
+
+---
+
+### Libraries Used
+This project uses the following libraries:
+- [MPU6050_light](https://github.com/richardgh/mpu6050) - Lightweight MPU6050 library for working with accelerometer and gyroscope.
+- [RadioHead](https://www.airspayce.com/mikem/arduino/RadioHead/) - Library for RF communication using 433MHz modules.
+- [Wire](https://www.arduino.cc/en/Reference/Wire) - Arduino Wire library for I2C communication.
+
+---
+
+## Getting Started
+
+To get started with this project, clone the repository and upload the provided Arduino sketches to your microcontrollers.
+
+### Prerequisites
+Before setting up the project, you will need:
+- **Arduino IDE** installed.
+- Basic electronics hardware: breadboards, jumper wires, and other components listed above.
+
+### Installation
+
+1. **Clone the repo**
+   ```sh
    git clone https://github.com/your-repo/Hand-Gesture-Controlled-Robot.git
    ```
 
 2. **Upload Arduino Sketches**:
-   - Use the Arduino IDE to upload `GROUP4_TRANSMITTER_CODE.ino` to the transmitter (hand controller).
-   - Upload `GROUP4_RECEIVER_CODE.ino` to the receiver (robot car).
+   - Upload `src/TRANSMITTER_CODE.ino` to the Arduino NANO (transmitter).
+   - Upload `src/RECEIVER_CODE.ino` to the Arduino UNO (receiver).
 
-3. **Circuit Setup**:
-   - Assemble the circuit as per the schematic provided (connect the Arduino, MPU6050 sensor, RF modules, and motor driver as needed).
+3. **Circuit Assembly**:
+   - Assemble the circuit as per the schematic provided in the `docs/` folder.
+   - Make sure all connections (MPU6050, RF modules, L298N, motors) are securely in place.
 
-4. **Power Supply**:
-   - Use a power bank for the transmitter module and ensure proper power connections for the robot’s motors.
+---
 
-## Usage Guide
+## Usage
 
-Once the sketches are uploaded and the circuit is complete, the robot can be controlled using hand gestures:
+Once the hardware setup is complete and sketches are uploaded, the robot can be controlled via hand gestures:
 
 - **Move Forward**: Tilt hand forward
 - **Move Backward**: Tilt hand backward
 - **Turn Left**: Tilt hand to the left
 - **Turn Right**: Tilt hand to the right
-- **Stop**: Hold hand level
+- **Stop**: Keep hand level
 
-The robot responds to these gestures via the MPU6050 sensor and the RF communication between the transmitter and receiver.
+You can check the Arduino serial monitor to confirm signal transmission.
 
-## Troubleshooting
+---
 
-- **Weak RF Signal**: The RF signal range may be limited. Consider increasing the input voltage or adding a longer antenna for better signal transmission.
-- **Interference from Other RF Devices**: If other RF devices interfere with your control signals, consider changing the frequency or implementing signal encoding to avoid conflicts.
+## Project Status
 
-## Future Improvements
+- **Current Version**: v1.0
+- **Next Steps**:
+  - Improve signal range and transmission stability.
+  - Add gesture-based speed control.
+  - Expand functionality with obstacle detection.
 
-- **Increase Signal Range**: Testing with a higher voltage on the transmitter may improve the RF signal range.
-- **Enhanced Antenna**: Soldering a 22- or 24-gauge wire as an antenna could improve the signal strength.
-- **Signal Encoding**: Adding signal encoding to avoid interference and ensure reliable communication.
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for improvements or bug fixes.
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
