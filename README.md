@@ -1,36 +1,30 @@
-
 # Hand Gesture Controlled Robot using RF Modules
 
-> A project to create a wireless hand gesture-controlled robot using RF modules and an MPU6050 sensor for gesture-based motion control.
+**A project to create a wireless hand gesture-controlled robot using RF modules and an MPU6050 sensor for gesture-based motion control.**
+
+![Transmitter Demo 1](docs/IMG_6290.png)
+*Front view of the transmitter.*
 
 ---
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Built With](#built-with)
-  - [Libraries Used](#libraries-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Features](#features)
+- [Components](#components)
+- [Libraries Used](#libraries-used)
+- [How It Works](#how-it-works)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Project Status](#project-status)
-- [Contributing](#contributing)
+- [Future Improvements](#future-improvements)
 - [License](#license)
+- [Contributing](#contributing)
 
 ---
 
 ## Overview
 
 This project showcases a hand gesture-controlled robot that utilizes **RF communication** and an **MPU6050 accelerometer and gyroscope** sensor. By tilting your hand in different directions, the robot can move forward, backward, left, or right. The core aim of the project is to explore wireless, intuitive robot control using simple hardware components, creating an interactive and innovative control mechanism for robotics.
-
-### Goal: 
-To build a gesture-controlled robot with simple, reliable wireless communication using low-cost components.
-
----
-
-![Transmitter Demo 1](docs/IMG_6290.png)
-*Caption: Front view of the transmitter.*
 
 ---
 
@@ -43,34 +37,34 @@ To build a gesture-controlled robot with simple, reliable wireless communication
 
 ---
 
-### Built With
-This project was built using:
+## Components
+
 - **Arduino UNO & NANO**
 - **MPU6050 Accelerometer and Gyroscope**
 - **RF 433MHz Transmitter/Receiver Modules**
-- **L298N Motor Driver**
-- **DC Motors**
+- **ELEGOO Smart Robot Car Kit V3.0***
+- **Breadboard and jumper wires**
 
 ---
 
-### Libraries Used
-This project uses the following libraries:
+## Libraries Used
+
 - [MPU6050_light](https://github.com/richardgh/mpu6050) - Lightweight MPU6050 library for working with accelerometer and gyroscope.
 - [RadioHead](https://www.airspayce.com/mikem/arduino/RadioHead/) - Library for RF communication using 433MHz modules.
 - [Wire](https://www.arduino.cc/en/Reference/Wire) - Arduino Wire library for I2C communication.
 
 ---
 
-## Getting Started
+## How It Works
 
-To get started with this project, clone the repository and upload the provided Arduino sketches to your microcontrollers.
+1. **IMU Data Collection**: The MPU6050 collects raw motion data, including acceleration and rotation. 
+2. **Gesture Mapping**: Hand gestures (tilts) are mapped to movement commands for the robot. 
+3. **RF Transmission**: Gesture data is transmitted to the robot via RF communication. 
+4. **Motor Control**: Based on the received commands, the robot's motors move accordingly to follow hand gestures. 
 
-### Prerequisites
-Before setting up the project, you will need:
-- **Arduino IDE** installed.
-- Basic electronics hardware: breadboards, jumper wires, and other components listed above.
+---
 
-### Installation
+## Installation
 
 1. **Clone the repo**
    ```sh
@@ -101,10 +95,8 @@ You can check the Arduino serial monitor to confirm signal transmission.
 
 ---
 
-## Project Status
+## Future Improvements
 
-- **Current Version**: v1.0
-- **Next Steps**:
   - Improve signal range and transmission stability.
   - Add gesture-based speed control.
   - Expand functionality with obstacle detection.
@@ -119,6 +111,4 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
